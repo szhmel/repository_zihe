@@ -5,14 +5,15 @@ date: "9/30/2020"
 output: html_document
 ---
 
-1. Data-cleaning
-```{r,echo=FALSE}
-df <- read.csv("./Heart Failure Data.csv")
-summary(is.na(df))
-```
-We have no missing value in this dataset.
+1. Analysis
 
-2. Plots and Tables
+```{r,include=FALSE}
+df <- read.table("data.txt", header = TRUE)
+```
+
+There were `r nrow(df)` data observation in the study.
+
+2. Table
 ```{r,include=FALSE}
 library(survminer)
 library(survival)
@@ -22,12 +23,6 @@ outputtab <- cbind(table$time,table$n.risk,table$n.event,round(table$surv,3),rou
 rownames(outputtab) <- NULL
 colnames(outputtab) <- c("Time","Risk Set","Number of Event","Survival","Hazard")
 
-km_model2 <- survfit(Surv(time, DEATH_EVENT) ~ as.factor(smoking), data = df)
-options(repr.plot.width = 18, repr.plot.height = 8)
-ggsurv <- ggsurvplot(km_model2, data = df, conf.int = TRUE,
-           break.time.by = 30, size = 0.3, tables.height = 0.15,
-           ggtheme = theme_light(), pval = T, legend.labs = c("Not Smoking", "Smoking"))+labs(title="Kaplan-Meier Curves", surv.median.line = "hv")
-ggsurv <- ggpar(ggsurv,font.title = c(16, "bold", "darkblue"))
 ```
 
 ```{r,echo=FALSE}
@@ -36,9 +31,9 @@ outputtab
 
 From the table we could see the overall survival probability and cumulative hazard ratio.
 
-```{r,echo=FALSE}
-ggsurv
-```
+2. Plot
+
+![Figure 1](fig1.png)
 
 From the plot we could see that the survival curves between smokers and non-smokers are quite similar. And the p-value indicate that there is no significant difference of survival probabilities within two groups.
 
