@@ -3,12 +3,6 @@
 library(survminer)
 library(survival)
 png("fig1.png")
-df <- read.table("data.txt", header = TRUE)
-km_model <- survfit(Surv(time, DEATH_EVENT) ~1, data = df)
-table <- summary(km_model, times = seq(from = 0, to = 290, by = 30))
-outputtab <- cbind(table$time,table$n.risk,table$n.event,round(table$surv,3),round(table$cumhaz,3))
-rownames(outputtab) <- NULL
-colnames(outputtab) <- c("Time","Risk Set","Number of Event","Survival","Hazard")
 
 km_model2 <- survfit(Surv(time, DEATH_EVENT) ~ as.factor(smoking), data = df)
 options(repr.plot.width = 18, repr.plot.height = 8)
