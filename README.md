@@ -4,7 +4,7 @@ For this assignment, I will do some simple analysis on my dataset.
 
 To analyze the data you will need to install two `R` packages called "survnimer" and "survival".
 
-In order to successfully generate the report, you should download all files in `repository_zihe`, and make sure you always run from the directory where these files are located.
+In order to successfully generate the report, you should download all files in `repository_zihe`, and make sure you always run from the directory. The file structure were included in `File Sturcture.txt`
 
 The process of generating the report has already been organized, so you could install these two package by the following bash code
 
