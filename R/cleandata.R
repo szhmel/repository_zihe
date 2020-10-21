@@ -1,7 +1,7 @@
 #! /usr/local/bin/Rscript
 
 # read data
-df <- read.csv("./raw_data/Heart Failure Data.csv")
+df <- read.csv("./Heart Failure Data.csv")
 
 # remove NAs
 data <- na.omit(df)
