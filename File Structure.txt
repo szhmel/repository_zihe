@@ -7,4 +7,4 @@ R/
    R/make_fig1.R
 raw_data/
    raw_data/Heart Failure Data.csv
-   
+File Structure.txt   
