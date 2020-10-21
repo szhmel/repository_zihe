@@ -1,0 +1,40 @@
+---
+title: "Analysis of Heart Failure"
+author: "Zihe Song"
+date: "9/30/2020"
+output: html_document
+---
+
+1. Analysis
+
+```{r,include=FALSE}
+df <- read.table("data.txt", header = TRUE)
+```
+
+There were `r nrow(df)` data observation in the study.
+
+2. Table
+```{r,include=FALSE}
+library(survminer)
+library(survival)
+km_model <- survfit(Surv(time, DEATH_EVENT) ~1, data = df)
+table <- summary(km_model, times = seq(from = 0, to = 290, by = 30))
+outputtab <- cbind(table$time,table$n.risk,table$n.event,round(table$surv,3),round(table$cumhaz,3))
+rownames(outputtab) <- NULL
+colnames(outputtab) <- c("Time","Risk Set","Number of Event","Survival","Hazard")
+
+```
+
+```{r,echo=FALSE}
+outputtab
+```
+
+From the table we could see the overall survival probability and cumulative hazard ratio.
+
+2. Plot
+
+![Figure 1](fig1.png)
+
+From the plot we could see that the survival curves between smokers and non-smokers are quite similar. And the p-value indicate that there is no significant difference of survival probabilities within two groups.
+
+

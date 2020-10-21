@@ -1,0 +1,10 @@
+makefile
+README.md
+report.md
+R/
+   R/cleandata.R
+   R/install.R
+   R/make_fig1.R
+raw_data/
+   raw_data/Heart Failure Data.csv
+   
