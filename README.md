@@ -14,7 +14,7 @@ make install
 
 ## Execute the analysis
 
-#1
+# 1
 
 ``` bash
 make report
@@ -24,7 +24,7 @@ This will create a file called `report.html` output in your directory that conta
 
 Also if you are intrested in see the NAs-removed data called `data.txt`, this will also be created in your directory. And the survival curves will be saved as `fig1.png` in your directory as well.
 
-#2
+# 2
 
 If you want to try to build a docker container to execute the analysis, you could use following command
 
@@ -43,7 +43,7 @@ Or you also could choose to mount all files to your computer,
 docker run -v your_repository_to_put_everything:/project -it proj
 ```
 
-#3
+# 3
 
 Also you could get the `report.html` from an built Docker image in Dockerhub, where by following code, you could pull my image to your local computer:
 ``` bash
@@ -64,6 +64,8 @@ By the follwing bash code, you will be able to see the information of each proce
 make help
 ```
 
+## Summary 
 
+This report would contain the descriptive table of the data as well as the KM curves between smokers and non-smokers.
 
 
