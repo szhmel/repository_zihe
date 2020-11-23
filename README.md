@@ -2,7 +2,7 @@
 
 For this assignment, I will do some simple analysis on my dataset.
 
-To analyze the data you will need to install two `R` packages called "survnimer" and "survival".
+To analyze the data you will need to install two `R` packages called "survminer" and "survival".
 
 In order to successfully generate the report, you should download all files in `repository_zihe`, and make sure you always run from the directory. The file structure were included in `File Sturcture.txt`
 

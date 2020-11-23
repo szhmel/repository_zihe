@@ -1,4 +1,5 @@
 makefile
+Dockerfile
 README.md
 report.md
 R/
